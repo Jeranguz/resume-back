@@ -5,6 +5,7 @@ dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 table = dynamodb.Table('cloud-resume-challenge')
 
 def lambda_handler(event, context):
+    print("Hello from GitHub Actions!")
     response = table.update_item(
         Key={
             'id': 'visitor_count'
