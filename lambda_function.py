@@ -1,11 +1,10 @@
 import json
 import boto3
 
-dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
-table = dynamodb.Table('cloud-resume-challenge')
 
 def lambda_handler(event, context):
-    print("Hello from GitHub Actions!")
+    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+    table = dynamodb.Table('cloud-resume-challenge')
     response = table.update_item(
         Key={
             'id': 'visitor_count'
