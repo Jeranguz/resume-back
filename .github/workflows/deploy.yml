@@ -30,7 +30,7 @@ jobs:
         with:
           audience: sts.amazonaws.com
           aws-region: us-east-1
-          role-to-assume: arn:aws:iam::182498323846:role/github-actions-backend
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
       - name: Zip Lambda function
         run: zip lambda_function.zip lambda_function.py
       - name: Deploy to AWS Lambda
